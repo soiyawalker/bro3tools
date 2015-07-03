@@ -3,20 +3,21 @@
 // @namespace	soiyawalker
 // @description	ブラウザ三国志 回復系スキル実行ツール
 // @include		http://*.3gokushi.jp/*
-// @version		1.00
+// @version		1.0.1
 // @require		http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js
 // @icon		http://pbs.twimg.com/profile_images/526631907543375872/eSaF5cj8.jpeg
 // ==/UserScript==
 
 // version //
-// 1.0 とりあえず回復実行
+// 1.0.0 とりあえず回復実行
+// 1.0.1 仁君が実行できなかったので修正
 
 jQuery.noConflict();
 
 (function($) {
     // 対応スキル一覧
     var skills = [
-        ["仁君", "sd001"],
+        ["仁君", "sd000"],
         ["神医の術式", "sd003"],
         ["傾国", "sd004"],
         ["弓腰姫の愛", "sd001"],
@@ -81,5 +82,7 @@ jQuery.noConflict();
     $.each(skills, function(){
         addSkill(this);
     });
+
+    
 
 })(jQuery);
