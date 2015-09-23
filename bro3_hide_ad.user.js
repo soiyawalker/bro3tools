@@ -3,14 +3,14 @@
 // @namespace	soiyawalker
 // @description	ブラウザ三国志 広告非表示ツール
 // @include		http://*.3gokushi.jp/*
-// @version		1.0.1
-// @require		http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js
+// @version		1.0.2
 // @icon		http://pbs.twimg.com/profile_images/526631907543375872/eSaF5cj8.jpeg
 // ==/UserScript==
 
 // version //
 // 1.0.0 とりあえず広告削除
 // 1.0.1 コメントの追加
+// 1.0.2 不要なメタデータの削除
 
 (function($) {
     // ページ上部のバナー

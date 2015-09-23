@@ -1,10 +1,9 @@
 // ==UserScript==
 // @name		bro3_pretty_skill
 // @namespace	soiyawalker
-// @description	ブラウザ三国志 回復系スキル実行ツール
+// @description	ブラウザ三国志 回復/鹵獲系スキル実行補助ツール
 // @include		http://*.3gokushi.jp/*
-// @version		1.0.2
-// @require		http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js
+// @version		1.0.3
 // @icon		http://pbs.twimg.com/profile_images/526631907543375872/eSaF5cj8.jpeg
 // ==/UserScript==
 
@@ -12,6 +11,7 @@
 // 1.0.0 とりあえず回復実行
 // 1.0.1 仁君が実行できなかったので修正
 // 1.0.2 鹵獲系スキルの対応
+// 1.0.3 不要なメタデータの削除
 
 jQuery.noConflict();
 
@@ -123,6 +123,7 @@ jQuery.noConflict();
         $("#wood").text(), $("#stone").text(), $("#iron").text(), $("#rice").text()
     ];
 
+    // 鹵獲先の決定
     var resourceRateArray = resourceRates.split(":");
     var currentResourceRates = [
         resources[0] / (resourceRateArray[0] + 0.001),
@@ -140,14 +141,14 @@ jQuery.noConflict();
         }
     }
 
+    var target = targets[targetIndex];
+    var targetName = target[0];
+    var targetX = target[1];
+    var targetY = target[2];
+
     function addRokakuSkill(skillData) {
         var skillName = skillData[0] + "LV";
         var skillId = skillData[1];
-
-        var target = targets[targetIndex];
-        var targetName = target[0];
-        var targetX = target[1];
-        var targetY = target[2];
 
         var confirmText = skillName + "を使用して" + "(" + targetX + ", " + targetY + ")" + targetName + "☆1に鹵獲しますか？";
 
